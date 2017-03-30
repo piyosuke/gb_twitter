@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :event_rankings
   resources :tops, only: [:index]
 
   root 'tops#index'

@@ -1,0 +1,41 @@
+<%= form_for(@event_ranking) do |f| %>
+  <% if @event_ranking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event_ranking.errors.count, "error") %> prohibited this event_ranking from being saved:</h2>
+
+      <ul>
+      <% @event_ranking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :event_count %><br>
+    <%= f.number_field :event_count %>
+  </div>
+  <div class="field">
+    <%= f.label :ranking %><br>
+    <%= f.number_field :ranking %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :rank %><br>
+    <%= f.number_field :rank %>
+  </div>
+  <div class="field">
+    <%= f.label :total_kill %><br>
+    <%= f.number_field :total_kill %>
+  </div>
+  <div class="field">
+    <%= f.label :total_contribution %><br>
+    <%= f.number_field :total_contribution %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+module EventRankingsHelper
+end

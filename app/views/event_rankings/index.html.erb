@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Event Rankings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event count</th>
+      <th>Ranking</th>
+      <th>Name</th>
+      <th>Rank</th>
+      <th>Total kill</th>
+      <th>Total contribution</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @event_rankings.each do |event_ranking| %>
+      <tr>
+        <td><%= event_ranking.event_count %></td>
+        <td><%= event_ranking.ranking %></td>
+        <td><%= event_ranking.name %></td>
+        <td><%= event_ranking.rank %></td>
+        <td><%= event_ranking.total_kill %></td>
+        <td><%= event_ranking.total_contribution %></td>
+        <td><%= link_to 'Show', event_ranking %></td>
+        <td><%= link_to 'Edit', edit_event_ranking_path(event_ranking) %></td>
+        <td><%= link_to 'Destroy', event_ranking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Event ranking', new_event_ranking_path %>
